@@ -15,7 +15,7 @@
 
     async function fetchEPrice() {
         const now = new Date();
-        var res = await fetch(`https://www.elprisetjustnu.se/api/v1/prices/2022/${now.getMonth() + 1}-${now.getDate().toString().padStart(2, "0")}_SE3.json`);
+        var res = await fetch(`https://www.elprisetjustnu.se/api/v1/prices/${now.getFullYear()}/${(now.getMonth() + 1).toString().padStart(2, "0")}-${now.getDate().toString().padStart(2, "0")}_SE3.json`);
         var ePrices = await res.json();
 
         let ePrice = null;
